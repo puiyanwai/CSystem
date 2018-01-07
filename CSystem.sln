@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemUI", "CSystem\SystemUI.csproj", "{FF966378-A77B-4CAE-829C-A2CCEFE46EEF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemBLL", "SystemBLL\SystemBLL.csproj", "{66AF6641-792E-4D37-A00E-979A47677643}"
@@ -10,6 +12,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{496F332A-0A15-414D-A8D4-F9DA8DD33362}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{7A84A158-903B-4693-90D0-0B27730B9FF6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{496F332A-0A15-414D-A8D4-F9DA8DD33362} = {496F332A-0A15-414D-A8D4-F9DA8DD33362}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,5 +45,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8406E44E-B25B-4CBA-B620-1DA8F3A96101}
 	EndGlobalSection
 EndGlobal
