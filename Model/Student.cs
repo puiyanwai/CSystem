@@ -8,11 +8,8 @@ using Common;
 
 namespace Model
 {
-    public class Student
+    public class Student : User
     {
-        public string Id { set; get; }
-        public string Name { set; get; }
-        public SexType Sex { set; get; }
         public string College { set; get; }
         public string Phone { set; get; }
         public string Password { set; get; }

@@ -8,7 +8,7 @@ using Common;
 
 namespace Model
 {
-    public class User
+    public abstract class User
     {
         public string Id { set; get; }
         public string Name { set; get; }
