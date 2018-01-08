@@ -1,6 +1,6 @@
 ﻿namespace CSystem
 {
-    partial class stu_main
+    partial class StuClient
     {
         /// <summary>
         /// Required designer variable.

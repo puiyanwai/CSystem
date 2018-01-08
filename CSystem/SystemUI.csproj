@@ -52,11 +52,11 @@
     <Compile Include="StudentRegisterForm.Designer.cs">
       <DependentUpon>StudentRegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="stu_main.cs">
+    <Compile Include="StuClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="stu_main.Designer.cs">
-      <DependentUpon>stu_main.cs</DependentUpon>
+    <Compile Include="StuClient.Designer.cs">
+      <DependentUpon>StuClient.cs</DependentUpon>
     </Compile>
     <Compile Include="TeacherRegisterForm.cs">
       <SubType>Form</SubType>
@@ -64,14 +64,12 @@
     <Compile Include="TeacherRegisterForm.Designer.cs">
       <DependentUpon>TeacherRegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeaHelper.cs" />
-    <Compile Include="tea_main.cs">
+    <Compile Include="TeaClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="tea_main.Designer.cs">
-      <DependentUpon>tea_main.cs</DependentUpon>
+    <Compile Include="TeaClient.Designer.cs">
+      <DependentUpon>TeaClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserHelper.cs" />
     <Compile Include="UserLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,14 +88,11 @@
     <EmbeddedResource Include="StudentRegisterForm.resx">
       <DependentUpon>StudentRegisterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="stu_main.resx">
-      <DependentUpon>stu_main.cs</DependentUpon>
+    <EmbeddedResource Include="StuClient.resx">
+      <DependentUpon>StuClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherRegisterForm.resx">
       <DependentUpon>TeacherRegisterForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="tea_main.resx">
-      <DependentUpon>tea_main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserLogin.resx">
       <DependentUpon>UserLogin.cs</DependentUpon>

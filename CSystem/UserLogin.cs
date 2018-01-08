@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Model;
+using SystemBLL;
 
 namespace CSystem
 {
@@ -49,61 +51,68 @@ namespace CSystem
             return true;
         }
 
+        /// <summary>
+        /// 尝试登录
+        /// </summary>
+        /// <returns>若成功登陆则返回一个对应的User，否则返回null</returns>
+        private User Login()
+        {
+            string name = userTextBox.Text;
+            string pass = passwordTextBox.Text;
+
+            switch (authTypeComboBox.SelectedIndex)
+            {
+                case 0:
+                    return LoginManager.StudentLogin(name, pass);
+                case 1:
+                    return LoginManager.TeacherLogin(name, pass);
+                default:
+                    return null;
+            }
+        }
+
+        /// <summary>
+        /// 创建对应的窗口
+        /// </summary>
+        /// <param name="user">用户</param>
+        private void CreateForm(User user)
+        {
+            Form form = null;
+            switch (authTypeComboBox.SelectedIndex)
+            {
+                case 0:
+                    form = new StuClient(user as Student);
+                    break;
+                case 1:
+                    form = new TeaClient(user as Teacher);
+                    break;
+            }
+            // Client closed
+            form.FormClosed += (s, ea) => Close();
+
+            Hide();
+            form.Show();
+        }
+
+
         private void loginButton_Click(object sender, EventArgs e)
         {
             if (!ValidateInfo())
                 return;
 
-            string username = userTextBox.Text.Trim();
-            string pwd = passwordTextBox.Text.Trim();
-
-            SystemBLL.UserLogin stulog = new SystemBLL.UserLogin();
-            SystemBLL.UserLogin tealog = new SystemBLL.UserLogin();
-
-            switch (authTypeComboBox.SelectedIndex)
+            User user = Login();
+            if (user == null)
             {
-                case 0:
-                    if (stulog.StuLogin(username, pwd))
-                    {
-                        UserHelper.userName = userTextBox.Text.Trim();
-                        UserHelper.password = passwordTextBox.Text.Trim();
-                        this.Hide();
-                        stu_main f = new stu_main();
-                        f.Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show("用户名或密码错误，请重新输入！", "错误");
-                        userTextBox.Text = "";
-                        passwordTextBox.Text = "";
-                        userTextBox.Focus();
-                    }
-                    break;
-                case 1:
-                    if (tealog.TeaLogin(username, pwd))
-                    {
-                        UserHelper.userName = userTextBox.Text.Trim();
-                        UserHelper.password = passwordTextBox.Text.Trim();
-                        this.Hide();
-                        tea_main f = new tea_main();
-                        f.Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show("用户名或密码错误，请重新输入！", "错误");
-                        userTextBox.Text = "";
-                        passwordTextBox.Text = "";
-                        userTextBox.Focus();
-                    }
-                    break;
-                default:
-                    MessageBox.Show("请先选择身份",
-                        "错误",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                    break;
+                MessageBox.Show(
+                    "账号密码不匹配",
+                    "错误",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
-            // TODO : login
+            else
+            {
+                CreateForm(user);
+            }
         }
 
         private void registerButton_Click(object sender, EventArgs e)
