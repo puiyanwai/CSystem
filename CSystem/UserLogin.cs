@@ -57,15 +57,17 @@ namespace CSystem
         /// <returns>若成功登陆则返回一个对应的User，否则返回null</returns>
         private User Login()
         {
-            string name = userTextBox.Text;
+            int id = int.Parse(userTextBox.Text);
             string pass = passwordTextBox.Text;
 
             switch (authTypeComboBox.SelectedIndex)
             {
                 case 0:
-                    return LoginManager.StudentLogin(name, pass);
+                    return LoginManager.StudentLogin(id, pass);
                 case 1:
-                    return LoginManager.TeacherLogin(name, pass);
+                    return LoginManager.TeacherLogin(id, pass);
+                case 2:
+                    return LoginManager.TeacherLogin(id, pass);
                 default:
                     return null;
             }
@@ -85,6 +87,9 @@ namespace CSystem
                     break;
                 case 1:
                     form = new TeaClient(user as Teacher);
+                    break;
+                case 2:
+                    form = new AdminClient(user as Teacher);
                     break;
             }
             // Client closed

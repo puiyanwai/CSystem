@@ -8,17 +8,18 @@ using Common;
 
 namespace Model
 {
-    public class Student
+    public class Student : User
     {
-        public string Id { set; get; }
-        public string Name { set; get; }
-        public SexType Sex { set; get; }
-        public string College { set; get; }
-        public string Phone { set; get; }
-        public string Password { set; get; }
+        public string College { private set; get; }
 
-        public Student(SqlConnection connection) : base(connection)
+        public Student(SqlConnection conn,
+            int id,
+            string name,
+            SexType sex,
+            string college,
+            string phone) : base(conn, id, name, sex, phone)
         {
+            College = college;
         }
     }
 }

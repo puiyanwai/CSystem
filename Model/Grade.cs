@@ -12,5 +12,6 @@ namespace Model
         public string ClassId { set; get; }
         public double UsualGrade { set; get; }
         public double FinalGrade { set; get; }
+        public double TotalGrade { set; get; }
     }
 }

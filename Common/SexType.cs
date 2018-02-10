@@ -2,8 +2,8 @@
 {
     public enum SexType
     {
-        Male,
-        Female,
-        Unknown // 为了扩展性考虑
+        Male = 0,
+        Female = 1,
+        Unknown = 2 // 为了扩展性考虑
     }
 }

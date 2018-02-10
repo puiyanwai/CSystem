@@ -8,22 +8,27 @@ using Common;
 
 namespace Model
 {
-    public class User
+    public abstract class User
     {
-        public string Id { set; get; }
-        public string Name { set; get; }
-        public SexType Sex { set; get; }
+        public int Id { private set; get; }
+        public string Name { private set; get; }
+        public SexType Sex { private set; get; }
+        public string Phone { private set; get; }
 
-        protected SqlConnection sqlConnection;
+        public SqlConnection Connection { private set; get; }
 
-        public User(SqlConnection connection)
+        protected User(SqlConnection conn, int id, string name, SexType sex, string phone)
         {
-            sqlConnection = connection;
+            Connection = conn;
+            Id = id;
+            Name = name;
+            Sex = sex;
+            Phone = phone;
         }
 
         public void Dispose()
         {
-            sqlConnection?.Close();
+            Connection?.Close();
         }
     }
 }

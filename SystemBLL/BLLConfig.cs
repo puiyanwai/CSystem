@@ -11,5 +11,6 @@ namespace SystemBLL
         public static readonly string AdminUserName = "sa";
         public static readonly string AdminPassword = "wpy12345";
         public static readonly string DefaultSource = @"MS-20170702QYZR";
+        public static readonly string DbName = "TeachingManagementSystem";
     }
 }

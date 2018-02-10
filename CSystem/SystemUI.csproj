@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,6 +45,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminClient.Designer.cs">
+      <DependentUpon>AdminClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExitConfirmForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudentRegisterForm.cs">
@@ -58,6 +68,12 @@
     <Compile Include="StuClient.Designer.cs">
       <DependentUpon>StuClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="TeaFuncUI\ClassDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeaFuncUI\ClassDialog.Designer.cs">
+      <DependentUpon>ClassDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="TeacherRegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,12 +86,57 @@
     <Compile Include="TeaClient.Designer.cs">
       <DependentUpon>TeaClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="TeaFuncUI\DisplayPicture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeaFuncUI\DisplayPicture.Designer.cs">
+      <DependentUpon>DisplayPicture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeaFuncUI\GradeDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeaFuncUI\GradeDialog.Designer.cs">
+      <DependentUpon>GradeDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeaFuncUI\InfoDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeaFuncUI\InfoDialog.Designer.cs">
+      <DependentUpon>InfoDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeaFuncUI\MessageDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeaFuncUI\MessageDialog.Designer.cs">
+      <DependentUpon>MessageDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeaFuncUI\NoticeDetailDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeaFuncUI\NoticeDetailDialog.Designer.cs">
+      <DependentUpon>NoticeDetailDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeaFuncUI\NoticeDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeaFuncUI\NoticeDialog.Designer.cs">
+      <DependentUpon>NoticeDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeaFuncUI\PasswordDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeaFuncUI\PasswordDialog.Designer.cs">
+      <DependentUpon>PasswordDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserLogin.Designer.cs">
       <DependentUpon>UserLogin.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdminClient.resx">
+      <DependentUpon>AdminClient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -91,8 +152,35 @@
     <EmbeddedResource Include="StuClient.resx">
       <DependentUpon>StuClient.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TeaFuncUI\ClassDialog.resx">
+      <DependentUpon>ClassDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TeacherRegisterForm.resx">
       <DependentUpon>TeacherRegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeaClient.resx">
+      <DependentUpon>TeaClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeaFuncUI\DisplayPicture.resx">
+      <DependentUpon>DisplayPicture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeaFuncUI\GradeDialog.resx">
+      <DependentUpon>GradeDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeaFuncUI\InfoDialog.resx">
+      <DependentUpon>InfoDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeaFuncUI\MessageDialog.resx">
+      <DependentUpon>MessageDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeaFuncUI\NoticeDetailDialog.resx">
+      <DependentUpon>NoticeDetailDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeaFuncUI\NoticeDialog.resx">
+      <DependentUpon>NoticeDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeaFuncUI\PasswordDialog.resx">
+      <DependentUpon>PasswordDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserLogin.resx">
       <DependentUpon>UserLogin.cs</DependentUpon>

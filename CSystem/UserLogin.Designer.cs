@@ -54,7 +54,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(35, 297);
+            this.label4.Location = new System.Drawing.Point(35, 295);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 12);
             this.label4.TabIndex = 16;
@@ -62,9 +62,9 @@
             // 
             // loginButton
             // 
-            this.loginButton.Location = new System.Drawing.Point(35, 330);
+            this.loginButton.Location = new System.Drawing.Point(37, 330);
             this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(179, 21);
+            this.loginButton.Size = new System.Drawing.Size(177, 21);
             this.loginButton.TabIndex = 12;
             this.loginButton.Text = "登录";
             this.loginButton.UseVisualStyleBackColor = true;
@@ -73,7 +73,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(35, 264);
+            this.label3.Location = new System.Drawing.Point(35, 263);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 15;
@@ -90,7 +90,7 @@
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(72, 294);
+            this.passwordTextBox.Location = new System.Drawing.Point(72, 292);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(223, 21);
             this.passwordTextBox.TabIndex = 11;
@@ -98,7 +98,7 @@
             // 
             // userTextBox
             // 
-            this.userTextBox.Location = new System.Drawing.Point(72, 261);
+            this.userTextBox.Location = new System.Drawing.Point(72, 260);
             this.userTextBox.Name = "userTextBox";
             this.userTextBox.Size = new System.Drawing.Size(223, 21);
             this.userTextBox.TabIndex = 10;
@@ -109,7 +109,8 @@
             this.authTypeComboBox.FormattingEnabled = true;
             this.authTypeComboBox.Items.AddRange(new object[] {
             "学生",
-            "教师"});
+            "教师",
+            "管理员"});
             this.authTypeComboBox.Location = new System.Drawing.Point(72, 225);
             this.authTypeComboBox.Name = "authTypeComboBox";
             this.authTypeComboBox.Size = new System.Drawing.Size(223, 20);
@@ -162,7 +163,7 @@
             this.Controls.Add(this.userTextBox);
             this.Controls.Add(this.authTypeComboBox);
             this.Name = "UserLogin";
-            this.Text = "UserLogin";
+            this.Text = "教务系统";
             this.ResumeLayout(false);
             this.PerformLayout();
 

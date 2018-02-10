@@ -14,14 +14,14 @@ namespace SystemDAL
         /// <param name="pass">密码</param>
         /// <param name="source">数据源</param>
         /// <returns></returns>
-        public static SqlConnection OpenDatabase(string user, string pass, string source)
+        public static SqlConnection OpenDatabase(string user, string pass, string source, string dbname)
         {
             try
             {
                 SqlConnectionStringBuilder connStr = new SqlConnectionStringBuilder()
                 {
                     DataSource = source,
-                    InitialCatalog = "TeachingManagementSystem",
+                    InitialCatalog = dbname,
                     UserID = user,
                     Password = pass,
                     //NetworkLibrary = "DBMSSOCN" // only for ip connection
@@ -41,24 +41,32 @@ namespace SystemDAL
         /// </summary>
         /// <param name="connection">SQL连接</param>
         /// <param name="command">命令</param>
-        /// <param name="type">命令类型，默认为Text</param>
         /// <param name="parameters">参数列表，默认为null</param>
+        /// <param name="type">命令类型，默认为Text</param>
         /// <returns>执行结果</returns>
         public static DataTable ExecuteDataTable(
             SqlConnection connection,
             string command,
-            CommandType type = CommandType.Text,
-            SqlParameter[] parameters = null)
+            SqlParameter[] parameters = null,
+            CommandType type = CommandType.Text)
         {
-            DataTable data = new DataTable();
-            using (var cmd = new SqlCommand(command, connection) { CommandType = type })
+            try
             {
-                if (parameters != null)
-                    cmd.Parameters.AddRange(parameters);
-                using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
-                    adapter.Fill(data);
+                DataTable data = new DataTable();
+                using (var cmd = new SqlCommand(command, connection) { CommandType = type })
+                {
+                    if (parameters != null)
+                        cmd.Parameters.AddRange(parameters);
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        adapter.Fill(data);
+                }
+                return data;
             }
-            return data;
+            catch (Exception e)
+            {
+                // TODO Log exception
+                return null;
+            }
         }
 
         /// <summary>
@@ -66,20 +74,28 @@ namespace SystemDAL
         /// </summary>
         /// <param name="connection">SQL连接</param>
         /// <param name="command">命令</param>
-        /// <param name="type">命令类型，默认为Text</param>
         /// <param name="parameters">参数列表，默认为null</param>
+        /// <param name="type">命令类型，默认为Text</param>
         /// <returns>执行结果的第一行第一列</returns>
         public static Object ExecuteScalar(
             SqlConnection connection,
             string command,
-            CommandType type = CommandType.Text,
-            SqlParameter[] parameters = null)
+            SqlParameter[] parameters = null,
+            CommandType type = CommandType.Text)
         {
-            using (var cmd = new SqlCommand(command, connection) { CommandType = type })
+            try
             {
-                if (parameters != null)
-                    cmd.Parameters.AddRange(parameters);
-                return cmd.ExecuteScalar();
+                using (var cmd = new SqlCommand(command, connection) { CommandType = type })
+                {
+                    if (parameters != null)
+                        cmd.Parameters.AddRange(parameters);
+                    return cmd.ExecuteScalar();
+                }
+            }
+            catch (Exception e)
+            {
+                // TODO Log exception
+                return null;
             }
         }
 
@@ -88,20 +104,28 @@ namespace SystemDAL
         /// </summary>
         /// <param name="connection">SQL连接</param>
         /// <param name="command">命令</param>
-        /// <param name="type">命令类型，默认为Text</param>
         /// <param name="parameters">参数列表，默认为null</param>
+        /// <param name="type">命令类型，默认为Text</param>
         /// <returns>影响的行数</returns>
         public static int ExecuteNonQuery(
             SqlConnection connection,
             string command,
-            CommandType type = CommandType.Text,
-            SqlParameter[] parameters = null)
+            SqlParameter[] parameters = null,
+            CommandType type = CommandType.Text)
         {
-            using (var cmd = new SqlCommand(command, connection) { CommandType = type })
+            try
             {
-                if (parameters != null)
-                    cmd.Parameters.AddRange(parameters);
-                return cmd.ExecuteNonQuery();
+                using (var cmd = new SqlCommand(command, connection) { CommandType = type })
+                {
+                    if (parameters != null)
+                        cmd.Parameters.AddRange(parameters);
+                    return cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception e)
+            {
+                // TODO Log exception
+                return 0;
             }
         }
 
@@ -111,21 +135,29 @@ namespace SystemDAL
         /// <param name="connection">SQL连接</param>
         /// <param name="command">命令</param>
         /// <param name="behavior"></param>
-        /// <param name="type">命令类型，默认为Text</param>
         /// <param name="parameters">参数列表，默认为null</param>
+        /// <param name="type">命令类型，默认为Text</param>
         /// <returns></returns>
         public static SqlDataReader ExecuteReader(
             SqlConnection connection,
             string command,
             CommandBehavior behavior = CommandBehavior.CloseConnection,
-            CommandType type = CommandType.Text,
-            SqlParameter[] parameters = null)
+            SqlParameter[] parameters = null,
+            CommandType type = CommandType.Text)
         {
-            using (var cmd = new SqlCommand(command, connection) { CommandType = type })
+            try
             {
-                if (parameters != null)
-                    cmd.Parameters.AddRange(parameters);
-                return cmd.ExecuteReader(behavior);
+                using (var cmd = new SqlCommand(command, connection) { CommandType = type })
+                {
+                    if (parameters != null)
+                        cmd.Parameters.AddRange(parameters);
+                    return cmd.ExecuteReader(behavior);
+                }
+            }
+            catch (Exception e)
+            {
+                // TODO Log exception
+                return null;
             }
         }
 

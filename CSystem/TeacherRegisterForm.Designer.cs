@@ -43,12 +43,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // canccelButton
             // 
             this.canccelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.canccelButton.Location = new System.Drawing.Point(222, 258);
+            this.canccelButton.Location = new System.Drawing.Point(218, 240);
             this.canccelButton.Name = "canccelButton";
             this.canccelButton.Size = new System.Drawing.Size(75, 21);
             this.canccelButton.TabIndex = 38;
@@ -58,7 +59,7 @@
             // 
             // registerButton
             // 
-            this.registerButton.Location = new System.Drawing.Point(37, 258);
+            this.registerButton.Location = new System.Drawing.Point(33, 240);
             this.registerButton.Name = "registerButton";
             this.registerButton.Size = new System.Drawing.Size(179, 21);
             this.registerButton.TabIndex = 37;
@@ -69,7 +70,7 @@
             // femaleRadioButton
             // 
             this.femaleRadioButton.AutoSize = true;
-            this.femaleRadioButton.Location = new System.Drawing.Point(194, 134);
+            this.femaleRadioButton.Location = new System.Drawing.Point(190, 119);
             this.femaleRadioButton.Name = "femaleRadioButton";
             this.femaleRadioButton.Size = new System.Drawing.Size(35, 16);
             this.femaleRadioButton.TabIndex = 33;
@@ -80,7 +81,7 @@
             // maleRadioButton
             // 
             this.maleRadioButton.AutoSize = true;
-            this.maleRadioButton.Location = new System.Drawing.Point(103, 134);
+            this.maleRadioButton.Location = new System.Drawing.Point(99, 119);
             this.maleRadioButton.Name = "maleRadioButton";
             this.maleRadioButton.Size = new System.Drawing.Size(35, 16);
             this.maleRadioButton.TabIndex = 32;
@@ -91,7 +92,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(38, 229);
+            this.label6.Location = new System.Drawing.Point(34, 207);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(29, 12);
             this.label6.TabIndex = 44;
@@ -99,14 +100,14 @@
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(98, 226);
+            this.passwordTextBox.Location = new System.Drawing.Point(94, 204);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(199, 21);
             this.passwordTextBox.TabIndex = 36;
             // 
             // phoneTextBox
             // 
-            this.phoneTextBox.Location = new System.Drawing.Point(98, 194);
+            this.phoneTextBox.Location = new System.Drawing.Point(94, 175);
             this.phoneTextBox.Name = "phoneTextBox";
             this.phoneTextBox.Size = new System.Drawing.Size(199, 21);
             this.phoneTextBox.TabIndex = 35;
@@ -114,7 +115,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(37, 197);
+            this.label5.Location = new System.Drawing.Point(33, 178);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 12);
             this.label5.TabIndex = 43;
@@ -122,7 +123,7 @@
             // 
             // collegeTextBox
             // 
-            this.collegeTextBox.Location = new System.Drawing.Point(98, 163);
+            this.collegeTextBox.Location = new System.Drawing.Point(94, 147);
             this.collegeTextBox.Name = "collegeTextBox";
             this.collegeTextBox.Size = new System.Drawing.Size(199, 21);
             this.collegeTextBox.TabIndex = 34;
@@ -130,7 +131,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(37, 166);
+            this.label4.Location = new System.Drawing.Point(33, 150);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 12);
             this.label4.TabIndex = 42;
@@ -139,7 +140,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 136);
+            this.label3.Location = new System.Drawing.Point(32, 121);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 41;
@@ -148,7 +149,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 107);
+            this.label2.Location = new System.Drawing.Point(33, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 12);
             this.label2.TabIndex = 40;
@@ -157,7 +158,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 76);
+            this.label1.Location = new System.Drawing.Point(33, 95);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 39;
@@ -165,23 +166,36 @@
             // 
             // idTextBox
             // 
-            this.idTextBox.Location = new System.Drawing.Point(98, 104);
+            this.idTextBox.Enabled = false;
+            this.idTextBox.Location = new System.Drawing.Point(94, 63);
             this.idTextBox.Name = "idTextBox";
+            this.idTextBox.ReadOnly = true;
             this.idTextBox.Size = new System.Drawing.Size(199, 21);
             this.idTextBox.TabIndex = 31;
             // 
             // nameTextBox
             // 
-            this.nameTextBox.Location = new System.Drawing.Point(98, 73);
+            this.nameTextBox.Location = new System.Drawing.Point(94, 91);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(199, 21);
             this.nameTextBox.TabIndex = 30;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label7.Location = new System.Drawing.Point(120, 20);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(92, 25);
+            this.label7.TabIndex = 45;
+            this.label7.Text = "教师注册";
             // 
             // TeacherRegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(335, 309);
+            this.ClientSize = new System.Drawing.Size(330, 289);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.canccelButton);
             this.Controls.Add(this.registerButton);
             this.Controls.Add(this.femaleRadioButton);
@@ -221,5 +235,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.TextBox nameTextBox;
+        private System.Windows.Forms.Label label7;
     }
 }

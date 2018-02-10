@@ -1,10 +1,36 @@
 ﻿using System;
 using System.Text.RegularExpressions;
+using System.Security.Cryptography;
+using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Common
 {
     public class Utilities
     {
+        private static readonly int StuIdOffset = 118000000;
+        private static readonly int TeaIdOffset = 218000000;
+
+        public static int StuIdConvertToDbId(int id) => id - StuIdOffset;
+
+        public static int TeaIdConvertToDbId(int id) => id - TeaIdOffset;
+
+        public static int DbIdConvertToStuId(int id) => id + StuIdOffset;
+
+        public static int DbIdConvertToTeaId(int id) => id + TeaIdOffset;
+
+        /// <summary>
+        /// 加密密码
+        /// </summary>
+        /// <param name="password">密码</param>
+        /// <returns>MD5后的密文</returns>
+        public static string EncryptPassword(string password)
+        {
+            MD5CryptoServiceProvider csp = new MD5CryptoServiceProvider();
+            var epswb = csp.ComputeHash(Encoding.Unicode.GetBytes(password));
+            return BitConverter.ToString(epswb).Replace("-", "");
+        }
+
         /// <summary>
         /// 检查手机号码是否符合规范
         /// </summary>
