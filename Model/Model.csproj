@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.cs" />
     <Compile Include="Class.cs" />
     <Compile Include="Grade.cs" />
     <Compile Include="Message.cs" />

@@ -75,6 +75,42 @@ namespace SystemBLL
             }
         }
 
+        public static Admin AdminLogin(int id, string password)
+        {
+            var conn = SqlHelper.OpenDatabase(
+                BLLConfig.AdminUserName,
+                BLLConfig.AdminPassword,
+                BLLConfig.DefaultSource,
+                BLLConfig.DbName);
+#if !DEBUG
+#error Make sure Data Table is correct
+#endif
+            string cmd = "SELECT id FROM Admin WHERE id=@u and password=@p ";
+            var result = SqlHelper.ExecuteDataTable(
+                conn, cmd,
+                parameters: new SqlParameter[] {
+                    new SqlParameter("@u", SqlDbType.Int) { Value = id },
+                    new SqlParameter("@p", SqlDbType.NVarChar, 50) { Value = Utilities.EncryptPassword(password) }
+                });
+            if (result.Rows.Count == 1)
+            {
+                return new Admin(conn, id);
+            }
+            else
+            {
+                conn.Close();
+                return null;
+            }
+        }
+
+        public static Tuple<int, string>[] AdminFetchTeachers(Admin admin)
+        {
+            var cmd = "SELECT id,name FROM Teacher";
+            var res = SqlHelper.ExecuteDataTable(admin.Connection, cmd);
+            return res.Rows.Cast<DataRow>().Select(r => Tuple.Create(
+               Convert.ToInt32(r.ItemArray[0]),
+               Convert.ToString(r.ItemArray[1]))).ToArray();
+        }
 
         //Register
         public static int StuRegister(string name, SexType sex, string college, string phone, string password)

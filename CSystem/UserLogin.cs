@@ -89,7 +89,7 @@ namespace CSystem
                     form = new TeaClient(user as Teacher);
                     break;
                 case 2:
-                    form = new AdminClient(user as Teacher);
+                    form = new AdminClient(user as Admin);
                     break;
             }
             // Client closed
